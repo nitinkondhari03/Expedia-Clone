@@ -2,15 +2,14 @@ import { Card, CardHeader, CardBody, CardFooter,Image,Stack,Button,Heading,Text,
 import {Link} from 'react-router-dom'
 function Alldata({titile,img,rating,wonder,reviews,price,priced,city,id}){
   return(
-    <div>
-<Link key={id} to={`allproduct/${id}`}></Link>
+    <div> 
+
 <Card
   direction={{ base: 'column', sm: 'row' }}
   overflow='hidden'
   variant='outline'
   width={'800px'}
   h='250'
-  mt={'10'}
 >
   <Image
     objectFit='cover'

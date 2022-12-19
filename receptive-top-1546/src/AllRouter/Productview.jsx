@@ -1,13 +1,35 @@
 import product from './Mumbai.json'
-import { Link, useParams } from "react-router-dom"
-import {Box, Img,Heading,Text,Button} from '@chakra-ui/react'
+import { Link, useNavigate, useParams } from "react-router-dom"
+import {Box, Img,Heading,Text,Button,useToast} from '@chakra-ui/react'
+import Navbar from '../Components/Navbar/Navbar'
+import {Auth} from '../Components/Context/Auth'
+import { useContext } from 'react'
 
 function Productviews(){
+    const toast = useToast()
     const {ids}=useParams()
-
- 
+    const {registettrue}=useContext(Auth)
+    const navigates=useNavigate()
+const handlechage=()=>{
+    toast({
+        position: 'top',
+        title: 'User Not Found.',
+        description: "Please log in first",
+        status: 'error',
+        duration: 9000,
+        isClosable: true,
+    }) 
+    function greet() {
+        navigates("/sign_in")  
+    }
+    
+    setTimeout(greet, 2000)
+   
+}
     return(
-        <Box w={"80%"} border={'1px solid red'} m={'auto'}>
+    <div>
+        <Navbar/>
+        <Box w={"70%"} m={'auto'} boxShadow='2xl' p='6' rounded='md' bg='white'>
             <Box display={'flex'} h="300px">
                 <Box  w={'50%'} h={'100%'}>
                     <Img w={'100%'} h={'100%'} src={product[ids].img}/>
@@ -129,8 +151,20 @@ function Productviews(){
                 </Box>
                 </Box>
             </Box>
-            <Box w={'40'} m='auto'><Button m={'auto'} colorScheme='blue'>Button</Button></Box>
+            <Box pb={'10'} w={'40'} m='auto'>
+                {
+                    registettrue?
+                    <Link to='/booking'><Button m={'auto'} colorScheme='blue'>Reserve a room</Button></Link>:
+                    
+                      <Button onClick={handlechage} m={'auto'}
+                    
+                    colorScheme='blue'>Reserve a room</Button>
+                     
+                    
+                }
+                </Box>
         </Box>
+        </div>
     )
 }
 export default Productviews

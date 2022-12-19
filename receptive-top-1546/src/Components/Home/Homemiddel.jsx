@@ -35,12 +35,12 @@ function Homemiddel(){
   return (
  <div>
     <Flex w={'80%'}  h={'500'} m={'auto'} marginTop={'50'}>
-      <Box  width={'100%'} sx={basicBoxStyles} >
-        <Text>Save instantly with</Text>
-        <br />
-        <Text>Expedia Rewards</Text>
-        <br />
-        <Button colorScheme='blue'>Button</Button>
+      <Box  width={'100%'} sx={basicBoxStyles} filter='grayscale(40%)' >
+        <Text mr={'auto'} mt={'auto'} fontSize={'40'}>Save instantly with <br />Expedia Rewards <br />
+        <Text fontWeight={'100'} fontSize={'20'} >You can enjoy access to perks like Member Prices, <br />
+         saving an average of 15% on thousands of hotels. Terms may apply.</Text><Button colorScheme='blue'>See Member Prices</Button></Text>
+
+        
       </Box>
     </Flex>
     <Box>

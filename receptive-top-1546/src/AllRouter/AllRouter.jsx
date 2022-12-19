@@ -5,6 +5,7 @@ import SignUp from '../Components/Signup/SignUp'
 import Alldata from './Alldata'
 import Productviews from '../AllRouter/Productview'
 import Datastore from '../AllRouter/Datastore'
+import Booking from '../AllRouter/PayBooking'
 function AllRouter(){
     return(
         <div>
@@ -14,6 +15,8 @@ function AllRouter(){
         <Route path='/sign_up' element={<SignUp/>}/>
         <Route path='/allproduct' element={<Datastore/>}></Route>
         <Route path='/allproduct/allproduct/:ids' element={<Productviews/>}></Route>
+        <Route path='/booking' element={<Booking/>}></Route>
+
         </Routes>
         </div>
     )

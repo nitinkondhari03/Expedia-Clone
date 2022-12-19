@@ -2,15 +2,55 @@ import { Box, Button, Center, Text ,Heading,Img,Flex,FormControl,
   FormLabel,Input,InputGroup,
     InputRightElement,
     Stack,
+    AlertIcon,Alert,
     Collapse,} from '@chakra-ui/react';
 import { useState } from 'react';
 import Signnavabr from './Signnavbar'
 import React from 'react';
-import {Link,NavLink} from 'react-router-dom'
+import {Link,NavLink, useNavigate} from 'react-router-dom'
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
+import {Auth} from '../Context/Auth'
+import { useContext } from 'react';
+import { useToast } from '@chakra-ui/react';
 function SignIn(){
+  const toast = useToast()
     const [showPassword, setShowPassword] = useState(false);
     const [show, setShow] = React.useState(false)
+    const [email,setemail]=useState('')
+    const [Password,setpassword]=useState('')
+    const {register,setresiter,regiture}=useContext(Auth)
+    const navigaet=useNavigate()
+    const handlesubmit=(event)=>{
+      event.preventDefault()
+      let obj={
+        'Password':Password,
+        'email':email
+      }
+      if(obj.Password===register.Password && obj.email===register.email ){
+        toast({
+          position: 'top',
+          title: 'Sign in successfully.',
+          description: "We've created your account for you.",
+          status: 'success',
+          duration: 5000,
+          isClosable: true,
+        })
+          regiture()
+          navigaet('/')
+      }
+      else{
+        toast({
+          position: 'top',
+          title: 'User Not Found.',
+          description: "Account does not exist",
+          status: 'error',
+          duration: 5000,
+          isClosable: true,
+        })
+      }
+     
+    }
+
 
   const handleToggle = () => setShow(!show)
     return(
@@ -41,12 +81,12 @@ function SignIn(){
           <Stack>
           <FormControl id="email" isRequired>
               <FormLabel>Email address</FormLabel>
-              <Input pr={'200'} type="email" />
+              <Input pr={'200'} type="email" placeholder='Email address' value={email} onChange={((e)=>setemail(e.target.value))} />
             </FormControl>
             <FormControl  id="password" isRequired>
               <FormLabel>Password</FormLabel>
               <InputGroup>
-                <Input type={showPassword ? 'text' : 'password'} mb={'5'} />
+                <Input type={showPassword ? 'text' : 'password'} mb={'5'} placeholder='Password' value={Password} onChange={((e)=>setpassword(e.target.value))} />
                 <InputRightElement h={'full'}>
                   <Button
                   mb={'5'}
@@ -74,6 +114,7 @@ function SignIn(){
                 size="lg"
                 bg={'blue.400'}
                 color={'white'}
+                onClick={handlesubmit}
                 _hover={{
                   bg: 'blue.500',
                 }}>
