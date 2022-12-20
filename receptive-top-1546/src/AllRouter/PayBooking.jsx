@@ -476,7 +476,7 @@ console.log(register)
                 </Box>
                 <Box><Box display={'flex'}> <Text display={'flex'} mt={'5'} fontWeight={'bold'}>Security code<Text color={'red'}>*</Text></Text></Box>
                     <Box  >
-                    <Input width={'10%'} mt={'2'} type='number' placeholder='Code'/>
+                    <Input width={'10%'} mt={'2'} type='number' placeholder='CVV'/>
                     </Box>
                     </Box>
                     <Box mt={'5'}>
