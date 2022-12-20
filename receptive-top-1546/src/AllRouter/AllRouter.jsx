@@ -6,6 +6,7 @@ import Alldata from './Alldata'
 import Productviews from '../AllRouter/Productview'
 import Datastore from '../AllRouter/Datastore'
 import Booking from '../AllRouter/PayBooking'
+
 function AllRouter(){
     return(
         <div>

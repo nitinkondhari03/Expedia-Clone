@@ -8,6 +8,8 @@ export const Auth=createContext()
 function Authprovider({children}){
     const [register,setresiter]=useState([])
     const [registettrue,settrue]=useState(false)
+    const [searchdata,setserachdata]=useState('')
+    const [prasdata,setparasdata]=useState('')
     const regiture=()=>{
         settrue(true)
     }
@@ -16,7 +18,7 @@ function Authprovider({children}){
         register([])
     }
     return(
-        <Auth.Provider value={{register,setresiter,regiture,regiflase,registettrue}}>{children}</Auth.Provider>
+        <Auth.Provider value={{register,setresiter,regiture,regiflase,registettrue,searchdata,setserachdata,prasdata,setparasdata}}>{children}</Auth.Provider>
     )
 }
 export default Authprovider

@@ -1,6 +1,9 @@
 import { Card, CardHeader, CardBody, CardFooter,Image,Stack,Button,Heading,Text,Box,Img} from '@chakra-ui/react'
+
 import {Link} from 'react-router-dom'
+import {Auth} from '../Components/Context/Auth'
 function Alldata({titile,img,rating,wonder,reviews,price,priced,city,id}){
+
   return(
     <div> 
 
@@ -44,8 +47,8 @@ function Alldata({titile,img,rating,wonder,reviews,price,priced,city,id}){
         
       </Box>
       <Box  mt={'3'} ml={'100'}>
-      <Text fontSize={'20'} fontWeight={'bold'}>{price}</Text>
-      <Text>{priced}</Text>
+      <Text fontSize={'20'} fontWeight={'bold'}>₹{price}</Text>
+      <Text>₹{priced}</Text>
       <Text>includes taxes & fees</Text>
       </Box>
     </Box>

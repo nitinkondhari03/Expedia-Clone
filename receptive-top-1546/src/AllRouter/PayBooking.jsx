@@ -3,9 +3,15 @@ import {ChevronRightIcon} from '@chakra-ui/icons'
 import Navbar from '../Components/Navbar/Navbar'
 import Footer from '../Components/Footer/Footer'
 import {Link, useNavigate} from 'react-router-dom'
+import {Auth} from '../Components/Context/Auth'
+import { useContext } from 'react'
 function Booking(){
   const navigates=useNavigate()
   const toast = useToast()
+  const {register,prasdata,searchdata}=useContext(Auth)
+  console.log("No")
+  console.log(searchdata)
+console.log(register)
   const handlechages=()=>{
     toast({
         position: 'top',
@@ -32,7 +38,7 @@ function Booking(){
                  </Box>
                  <Box ml="2">
                     <Text mt='1'>Signed in as</Text>
-                    <Text>nitinkondhari85@gmail.com</Text>
+                    <Text>{register.email}</Text>
                     <Text fontSize={'14'} color={'green'}>You will earn 200 Expedia Rewards points</Text>
                  </Box>
             </Box>
@@ -44,7 +50,7 @@ function Booking(){
                 </Box>
                 <Box display={'flex'}> <Text display={'flex'} mt={'5'} fontWeight={'bold'}>Traveller name<Text color={'red'}>*</Text></Text></Box>
                 <Box mt={'2'} w={'30%'}>
-                <Select placeholder='Nitin Kondhari' >
+                <Select placeholder={register.FirstName+" "+register.LastName} >
                  <option value='New Traveller'>New Traveller</option>
                  <option value='Add new Traveller'>Add new Traveller</option>
                   <option value='Select from my accound'>Select from my accound</option>
@@ -494,7 +500,7 @@ function Booking(){
                </Box>
                <Box display={'flex'} mt={'5'}>
                 <Img w={'10'} src={'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKcAAACnCAMAAABDyLzeAAAAmVBMVEX///8AkxcAjgAAkAAAiwD///3//f8AiQAAkhEAkAkAhwAAkgAAlRf2+/b///sAkhnQ6dOezqLV69nw+fEklyZUsWAvnzoYmSgkmi5Ep0lwuXOw2bHh7uHo9Od3un9qtG1RqFOPxo6/3sBps3Oy1reCvYVEoUl2vnyAwIG527ZgsWPE5cym0alPo1aGvYxvsXSazJmUwZdKrlY8VNDgAAAEBElEQVR4nO2bXXPiOgyGHX+A0zhJSTiBlPBRWigEzpbd///j1sC2kbeBndmLI80ZPZ3elJu3liW/ko0QDMMwDMMwDMMwDMMwDMMwDMMwDMPcxwhzBlvG/wEj0mL0TzWZ1k+zJsVWc4f5QmkZWxvLoVoW2Gpukr5pG32gV3NsPf0Y8SyjDls12Ip6MeJRWqBTj7AV9WJEuVJApqyxFfVjxCLJO5nxdC5I1tDBGgbd2WOGregGLoj6ElvOLV5UEPUSW88NXmHUrVpj6+nFiHkddzJztSG5Ob05eoEVPt7SjLoR66EDOoc0o+7txxbuTvUmaIY928GSFNdE/cfgYOFyxq/Ygm6Rw+XUL9hybvEsQYW3Y5q5PhCP0yCJqEY9Xarooyi5SC2ptkV7DQ9MS7Mp8g3mGByYkd7QNJ1CfIO5nlRUo/447lS63FI9MLM34D+calOSUff+4wH6D6JJ5GtSBZNIkk2iUeA/JnOiMosKnESOaq9xHtOA3Rm3VGvSPAGrGekDtp5btIGda0maeJ8xBwWibuOCaLKnSxD2SG1oqvQ+qbNzdGed/sSEQ0QnT9h6bjELbGdSEg17WcHdiTs6vrdER5DsLq5p9m6+xK+AAXHJEUnGeSXTedM0pehf1mPg4v8ts8F/rPAX5vBtuarrbbtbi8HXu8rAz+V6hlXim1omKrb+R6n3L58aMdLgKFJjBIUXyq0Pq3PnX+fdb89yBn5uj6HxTFG5bhJj7Zei8wpLvFoh1U5jzDucDkc6MMBGlC34OFczPKOU1sFF5Rge3pnYJ9AeI9ZOI4otnMH5frfL6Ez86P4JlyPfYoZDOL2BHz2A3WkTg1Q6LxixB2ry6GHdLWgLT3ZvlDAdiC/tT7BGft60ZMGkJrITbBs/KGH745LdNbyZ2cEmU31HFSkut/7Wfipy0ceIq5la4JTGFCY1z/DySlXXP45gxZItrsIzftttg8b3EuJMwYnSkMJy+s43B8UpvsQ4mHKrFbbCCybbJV1P6S6XwMFsQc6wJf5iXsEjUh/EYQJkkrkg9EZzCB8pVOIU+Hj0ovSBSSsgLB+ewGsAF5EoSlcMfESTR0lw6FN6qpIuAysKeSA1SDzEN2TGpO6KjGh7F9RF+khrkFjoPp1RMi1IyRRm0StULmjJ9As67d2e5O7ZzaJvh04oZdEZI5rgmcoV/Uwriy68qN9lOo3db/TxNeXjOh3Q02k2v+9QjTXxvIsJu/lrm0mQgXmHT4+vAxKSNNLBBwGSZNjPPMkcCM2p3mqJQoK2PVkJzKHSHTJzkp9jJTtEmyD/mXRfaa1UEkvtTkRX80p5OP2ooml7bEh/WQtoQx15MgzDMAzDMAzDMAzDMAzDMAzDMAzzV/wEre4wbDMIUfgAAAAASUVORK5CYII='}/>
-                <Text mt={'3'} fontSize={'14'} color={'green'}>Change of plans? No problem. You can cancel for a full refund before</Text>
+                <Text mt={'3'} fontSize={'14'} color={'green'}>Change of plans? No problem. You can cancel for a full refund before {searchdata.checkin}</Text>
                </Box>
              </Box>
             <Button mt={'5'} onClick={handlechages} colorScheme='yellow' bgGradient='linear(to-r, yellow.200, yellow.500)' size='lg'>
@@ -516,20 +522,21 @@ function Booking(){
             
             <Box w={'35%'}   >
                 <Box  boxShadow='rgba(149, 157, 165, 0.2) 0px 8px 24px' ml={'4'}  borderTop={'1px solid white'}>
-                  <Img  src={'https://images.trvl-media.com/lodging/1000000/900000/895300/895247/5f6e7c8e.jpg?impolicy=resizecrop&rw=598&ra=fit'}/>
-                  <Text pl={4} pt={4} fontSize={"16"}>8.6/10 Excellent (264 reviews)</Text>
-                  <Text pl={4} fontSize={"14"}>Guests rated this property 8.8/10 for cleanliness</Text>
+                  <Img  src={prasdata.img}/>
+                  <Text pl={4} fontWeight={'bold'} fontSize={"16"}>{prasdata.titile}</Text>
+                  <Text pl={4} pt={2} fontSize={"16"}>{prasdata.rating+" "+prasdata.wonder} {prasdata.reviews}</Text>
+                  <Text pl={4} fontSize={"14"}>Guests rated this property {prasdata.rating} for cleanliness</Text>
                   <Box display={'flex'}>
                     <Text pl={4} pt={4} fontSize={'14'} fontWeight={'bold'}>1 Room:</Text>
                     <Text pl={2} pt={4} fontSize={"14"}>Superior Room, 1 King Bed, Non Smoking, Lake View</Text>
                   </Box>
                   <Box display={'flex'}>
                     <Text pl={4} pt={4} fontSize={'14'} fontWeight={'bold'}>Check-in:</Text>
-                    <Text pl={2} pt={4} fontSize={"14"}>31 Dec 2022</Text>
+                    <Text pl={2} pt={4} fontSize={"14"}>{searchdata.checkin}</Text>
                   </Box>
                   <Box display={'flex'}>
                     <Text pl={4} pt={4} fontSize={'14'} fontWeight={'bold'}>Check-out: </Text>
-                    <Text pl={2} pt={4} fontSize={"14"}>1 Jan 2023</Text>
+                    <Text pl={2} pt={4} fontSize={"14"}>{searchdata.checkout}</Text>
                   </Box>
                   <Text pl={4} pt={2} pb={'5'} fontSize={"14"}>1-night stay</Text>
                 </Box>
@@ -539,7 +546,7 @@ function Booking(){
                 <Box>
                     <Box mt={'5'} display={'flex'} justifyContent={'space-between'}>
                        <Text >1 room x 1 night</Text>
-                       <Text mr={'4'}>₹15,000.00</Text>
+                       <Text mr={'4'}>₹{prasdata.price}</Text>
                     </Box>
                     <Box mt={'5'} display={'flex'} justifyContent={'space-between'}>
                        <Text >Taxes</Text>
@@ -550,7 +557,7 @@ function Booking(){
                 <Box pb="5">
                     <Box mt={'5'}  display={'flex'} justifyContent={'space-between'}>
                        <Text fontWeight={'bold'} fontSize={'16'} >Total</Text>
-                       <Text fontWeight={'bold'} fontSize={'16'} mr={'4'}>₹17,700.00</Text>
+                       <Text fontWeight={'bold'} fontSize={'16'} mr={'4'}>₹{prasdata.priced}</Text>
                     </Box>
                     <Box mt={'2'}  display={'flex'} justifyContent={'space-between'}>
                        <Text color={'green'} fontWeight={'bold'} fontSize={'16'} >Pay now</Text>
@@ -558,7 +565,7 @@ function Booking(){
                     </Box>
                     <Box mt={'2'}  display={'flex'} justifyContent={'space-between'}>
                        <Text  fontSize={'16'}  >Pay at property</Text>
-                       <Text fontSize={'16'}  mr={'4'}>₹17,700.00</Text>
+                       <Text fontSize={'16'}  mr={'4'}>₹{prasdata.priced}</Text>
                     </Box>
                 </Box>
                 </Box>

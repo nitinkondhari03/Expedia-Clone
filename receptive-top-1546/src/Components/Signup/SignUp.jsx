@@ -37,7 +37,7 @@ function SignUp(){
       title: 'Account created.',
       description: "your account as created successfully.",
       status: 'success',
-      duration: 9000,
+      duration: 2000,
       isClosable: true,
     })
     setresiter(frmdetails);
