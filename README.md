@@ -19,20 +19,26 @@ A website to book airline tickets, hotel reservations, car rentals, cruise ships
 # Pages
 
 ### Home Page
-![Home Page](https://github.com/nitinkondhari03/Indiatoday-Clone/assets/107460712/0c87ce38-c5e4-4877-a1ba-7c26c79ed525)
+![Expedia Home page](https://github.com/nitinkondhari03/Expedia-Clone/assets/107460712/6f53a70b-739e-4523-824c-eef5a4167688)
 
-### Sign Up
-![sign up](https://github.com/nitinkondhari03/Indiatoday-Clone/assets/107460712/db4d1998-f77c-4dd9-a677-a5ffa7db21ec)
+### Sign Up Page
+![Sign up](https://github.com/nitinkondhari03/Expedia-Clone/assets/107460712/72d900ba-0ec4-4dbe-ba31-00bdde63b132)
 
-###Sign In
-![Sign in](https://github.com/nitinkondhari03/Indiatoday-Clone/assets/107460712/a5390c5d-5246-402b-8fa4-c33c1e17e985)
+### Sign In Page
+![Sign in](https://github.com/nitinkondhari03/Expedia-Clone/assets/107460712/1ed7492d-923d-48f1-bb57-75edb4f8243c)
 
-###Read Newz
-![Read newz](https://github.com/nitinkondhari03/Indiatoday-Clone/assets/107460712/ba04908f-e893-4f4c-910f-b597818287c0)
+### Hotels Page
+![Hotel](https://github.com/nitinkondhari03/Expedia-Clone/assets/107460712/7b3f6df7-c293-4ab5-9690-daa523bcd9cc)
 
-###Watch Newz
-![Watch live newz](https://github.com/nitinkondhari03/Indiatoday-Clone/assets/107460712/e48d24f2-0e30-4b82-8020-fb946bb873d1)
+### Hotel Details Page
+![Hotel detaies](https://github.com/nitinkondhari03/Expedia-Clone/assets/107460712/d557230f-df8a-44a8-aaef-336c6b2a0622)
 
-###Live Newz
-![Live Tv](https://github.com/nitinkondhari03/Indiatoday-Clone/assets/107460712/2acbce77-3195-42f5-8384-c2b6f0ebc759)
+### Payment Options Page
+![paymet options](https://github.com/nitinkondhari03/Expedia-Clone/assets/107460712/5e0f152c-1999-419d-8edc-f3eb89ca8a0a)
+
+### Booking Page
+![Booking](https://github.com/nitinkondhari03/Expedia-Clone/assets/107460712/7ff9e94d-37ce-44e5-b33c-2af652e7a1f9)
+
+### Footer Page
+![Footer](https://github.com/nitinkondhari03/Expedia-Clone/assets/107460712/7146a380-b808-4d39-8b4a-03758dca7197)
 
